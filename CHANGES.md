@@ -323,3 +323,13 @@ From outside the program family:
   and co-authors) as used by Ivanov's trainer, and for ordering two bands of
   the dictionary offline the pre-trained embedding models
   `intfloat/e5-large-v2` and `BAAI/bge-reranker-base`.
+
+# Changes in cmix-wolf P14 (against cmix-neif-beehive)
+
+Reference point: cmix-neif-beehive commit 92c07c0 (tag cmix-neif-beehive).
+Four grafted CM-layer levers from the cmix-wolf P13 line (span16 -23,939 B,
+full stream -28,704 B archive, comp9 +334 B => S -28,370 B): PRL per-row decay,
+E1 mixer interpolation, E3b timestamp progress (kN=9), IND doubly-indirect
+subset; kGate 0.35 compiled but inert on this engine (control build at 0.55:
+byte-identical archives). Transformer, weights container (sha256 141ee13c...),
+preprocessing, dictionary, PPMd, packer and build procedure unchanged.

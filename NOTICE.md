@@ -117,3 +117,20 @@ summary:
   kept verbatim as `README_cmix-neif-1.0.md`.
 
 The copyright and licence notices of all files, and every section above, are unchanged.
+
+## Changes in cmix-wolf P14
+
+cmix-wolf P14 (this repository) modifies cmix-neif-beehive as follows:
+
+- CM layer: four grafted levers (PRL, E1, E3b, IND) plus an inert kGate 0.35
+  build-time constant - files: src/predictor.{cpp,h}, src/mixer/*,
+  src/models/fxcmv1.cpp, src/context-manager.cpp, src/id_exclude.h,
+  src/metablock*.h, src/word_label.cpp, src/ppm_logit_prior.h, new headers
+  src/port_cfg.h, src/neif_levers.h, src/b1_interp.h, src/ts_progress.h;
+- the transformer, its trained weights, the compiled-in Beehive CM settings,
+  the prefetch constant, preprocessing, dictionary and build recipe are kept
+  byte-for-byte from cmix-neif-beehive (galqiwi), itself by Marcus Woelk;
+- docs: README.md of this entry; Beehive's README preserved as
+  doc/README_cmix-neif-beehive.md; sections added to CHANGES.md and NOTICE.md.
+
+All upstream copyright and licence notices remain unchanged.

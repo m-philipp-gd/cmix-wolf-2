@@ -1,29 +1,24 @@
-# Build environment of this entry
-#
-# The toolchain is part of the artefact: the binary is built with
-# profile-guided optimisation and LTO, and lld does the code
-# generation.  A different major version produces a different binary.
+# Build environment of this entry (cmix-wolf P14)
 
-source date            2026-10-02T18:32:52Z
-target                 linux-x86_64, x86-64-v3 (AVX2+FMA), single thread
+source identity        cmix-neif-beehive commit 92c07c0 (tag cmix-neif-beehive,
+                       itself cmix-neif-1.0 commit 1c9ea5e by Marcus Woelk),
+                       plus the P14 CM graft (15 files, see CHANGES.md)
+target                 linux-x86-64, x86-64-v3 (AVX2+FMA), single thread
 
-## toolchain of the machine that generated this package
+## toolchain (pinned by install.sh)
 clang++-18             Ubuntu clang version 18.1.3 (1ubuntu1)
-clang-18               Ubuntu clang version 18.1.3 (1ubuntu1)
-ld.lld-18              Ubuntu LLD 18.1.3 (compatible with GNU linkers)
-llvm-profdata-18       Ubuntu LLVM version 18.1.3
-llvm-objcopy-18        llvm-objcopy, compatible with GNU objcopy
-llvm-strip-18          llvm-strip, compatible with GNU strip
-make                   GNU Make 4.3
-objcopy                GNU objcopy (GNU Binutils for Ubuntu) 2.42
+ld.lld-18              Ubuntu LLD 18.1.3
+PGO                    upstream profile in pgo_data/, used via make prof_use
 
-kernel                 Linux 6.8.0-137-generic
-distribution           Ubuntu 24.04.4 LTS
-
-## submitted artefacts
-# Measured on the shipped files themselves; the same sums stand in the
-# result table of README.md.
-comp9 sha256           8b07d85f0a374b55688fd08d1a464222f766efbb5bfefc2bc94d6abb201133d7
-archive9 sha256        30eaf239168bd4efb4c57af09002b968308d7614d0cca619540e971fc38f4f18
-comp9 bytes            4000689
-archive9 bytes         91913343
+## artifacts
+comp9                  3,942,114 B, sha256 c985a5a9d1dc2f1be5c30343d0ceaf1b42690d9b364b5421d6f1e877c450c38c, md5 df9c851f99587651e246ae6156a01d62
+comp9.args             19 B (-e, enwik9, archive9)
+archive9               90,735,088 B, sha256 a566968be434fd65cc90d1614c62bcfabdfc675fdfa8d6d6337b71dd722058e8
+full-stream S          94,677,221 B
+certified rebuild      second independent clean build -> byte-identical comp9
+coder stream           888,096,401 B -> 86,776,114 B coded, 125,201.73 s
+encode                 34.8 h solo single core (program clock; EU DST
+                       rollback 2026-10-25 hides 1 wall-clock hour)
+decode (this archive)  round-trip gate running on our single-core host;
+                       reference-machine projection ~46-49 h < 54.18 h limit
+weights container      unchanged, sha256 141ee13c316811157bea167846b3f45472affff7adaa1b8b263e30621e490885
