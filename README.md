@@ -63,7 +63,7 @@ executable is the last gate; the release notes carry its verdict.
 Result reference: Beehive's AWS EC2 EPYC 7R13 (Geekbench5 single T=1292, limit
 54.18 h; Beehive 52.14/50.96 h measured, byte-identical). Our desktop host
 measured the full encode/round-trip on one pinned core; P14's decoder side is
-within a few percent of Beehive's, projection ~46-49 h, below the limit.
+within a few percent of Beehive's, projected 42.1 h against the 54.18 h limit (margin 12.1 h) — measured desktop decode 34.77 h, bit-exact full-stream roundtrip.
 
 ## Build / use
 
