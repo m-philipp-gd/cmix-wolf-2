@@ -9,5 +9,5 @@ encoder    : ./comp9 -e enwik9 archive9         (33.8 h solo, local Ryzen 7900, 
 archive9   : 90.735.088 B  sha256 a566968b  (self-extracting decoder container; ./archive9 = decode)
 decoder    : ./archive9      measured 34.77 h  bit-exact (decoded enwik9 sha256 159b8535 == enwik9)
 memory     : <10 GB RSS (ppm.page 16G sparse); single-core decode
-reference  : Google Cloud c2d (EPYC 7B13, T=1292, limit 54.18 h): projected ~42.1 h (margin 12.1 h)
+reference  : AWS EC2 (EPYC 7R13, T=1292, limit 54.18 h): projected ~42.1 h (margin 12.1 h)
 ISA        : x86-64 baseline + AVX2 (author paths). AVX-512 NOT used — reference machine has none.

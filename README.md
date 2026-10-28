@@ -79,3 +79,14 @@ Section pointers to "README.md" in source files refer to the upstream README
 Beehive's own README: `doc/README_cmix-neif-beehive.md`. This line's changes:
 `CHANGES.md`, `NOTICE.md`, build environment: `environment.txt`. The transformer
 weights' training (Beehive's work, untouched here): `training/README.md` sec. 12.
+
+## cmix-wolf P14 — S = 94.677.221 B (−28.370 B vs cmix-neif-beehive, −1.290 % vs cmix-neif-1.0)
+
+cmix-wolf P14 = cmix-neif-beehive (galqiwi) mit dem vier Hebel umfassenden CM-Delta von cmix-wolf P13 (E1, E3b, PRL, kGate; kGate ist auf der Beehive-Engine ein nachgewiesener No-Op). Deterministischer Rebuild: comp9 sha256 c985a5a9 (zwei unabhängige Builds byte-identisch). Vollstrom: archive9 90.735.088 B, Roundtrip bit-exakt (decoded sha256 159b8535).
+
+- **Encode/Decode (local measurement host, Ryzen):** encode 33,8 h solo · **decode 34.77 h gemessen, bit-exakt zertifiziert**
+- **Referenzmaschine (AWS EC2, AMD EPYC 7R13, T=1292, 54.18 h limit):** proj. 42.1 h — margin 12.1 h (77.7% utilized)
+- RSS 9,75 GiB während Dekode · Single-Core-Decode · x86-64, keine ISA-Sonderrechte (AVX2-Autorpfad, kein AVX-512)
+- Assets: comp9.args, SHA256SUMS, comp9, cmix_wolf_p14_src.tar.xz, archive9
+- License GPL-3.0; Attribution: Christian Bautista (cmix), Marc Wölk (cmix-neif-1.0), galqiwi (beehive engine + training), Philipp Müller (cmix-wolf P13→P14 CM delta)
+
